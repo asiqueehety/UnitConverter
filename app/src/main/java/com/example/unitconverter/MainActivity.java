@@ -34,12 +34,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 convertKiloToPounds(Double.parseDouble(editText.getText().toString()));
-                resultText.setText(String.valueOf(convertKiloToPounds(Integer.parseInt(editText.getText().toString()))));
+                resultText.setText(String.valueOf(convertKiloToPounds(Double.parseDouble(editText.getText().toString()))));
             }
         });
     }
 
-    public double convertKiloToPounds(double kilos){
-        return kilos*2.20462;
+    public String convertKiloToPounds(double kilos){
+        return String.format("%.4f",(kilos*2.205));
     }
 }
